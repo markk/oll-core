@@ -51,7 +51,7 @@
 (define os-path-separator-char
    (if (eq? PLATFORM 'windows) #\\ #\/ ))
 
-(define os-path-separator-string (format "~a" os-path-separator-char))
+(define os-path-separator-string (format #f "~a" os-path-separator-char))
 
 ;%%%%%%%%%%%%%%%%
 ; Path operations
@@ -133,7 +133,7 @@
 (define-public (os-path-absolute path)
    "Return absolute and normalized path of given 'path'.
     If 'path' is already an absolute path it is simply normalized,
-    if it is a relative path it is interpreted as relative 
+    if it is a relative path it is interpreted as relative
     to the current working directory."
    (let* ((path-list (os-path-normalize path)))
      (if (os-path-absolute? path-list)
@@ -271,7 +271,7 @@
 
 ; Returns a string wtih the absolute path to the input file, without file extension
 (define (os-path-input-basename)
-   (format "~a/~a"
+   (format #f "~a/~a"
      (os-path-input-dirname)
      (ly:parser-output-name (*parser*))))
 

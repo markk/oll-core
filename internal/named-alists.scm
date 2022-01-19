@@ -78,7 +78,7 @@ using key '~a' and ~a.  This will create a new alist instead,
 which is probably not intended."
         alst-name funcname key-name
         (if val
-            (format "value '~a'" val)
+            (format #f "value '~a'" val)
             "no value"))))
 
 ;; Wrapper function around set-in-alist
@@ -197,4 +197,3 @@ Please use the equivalent context-mod->props instead.")
     (map (lambda (o)
            (cons (cadr o) (caddr o)))
       (ly:get-context-mods ctx-mods))))
-

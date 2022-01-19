@@ -54,12 +54,12 @@ mystack = #(stack-create)
 % read the topmost entry from the stack
 #(define top-one (get mystack))
 
-#(display (format "'get' topmost item, remains on stack: ~a\n" top-one))
+#(display (format #f "'get' topmost item, remains on stack: ~a\n" top-one))
 #(display mystack)#(newline)
 
 % Fetch topmost entry from stack
 #(define top-two (pop mystack))
-#(display (format "Topmost item, now popped from stack: ~a\n" top-two))
+#(display (format #f "Topmost item, now popped from stack: ~a\n" top-two))
 #(display mystack)#(newline)
 
 % Push arbitrary items on top of stack
@@ -67,5 +67,3 @@ mystack = #(stack-create)
 #(display "Arbitrary item pushed on top of stack.\n")
 
 #(display mystack)
-
-
