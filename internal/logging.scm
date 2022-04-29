@@ -38,7 +38,7 @@
 
 ; Generic function to consistently format the output for the logging functions
 (define (oll-format-log fmt vals)
-  (apply format #f (format "\n\n~a\n" fmt) vals))
+  (apply format #f (format #f "\n\n~a\n" fmt) vals))
 
 ; Open log file
 (define oll-logfile
